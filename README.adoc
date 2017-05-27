@@ -13,4 +13,4 @@
 :experimental:
 :doctype: book
 
-NOTE: Ejemplos sobre basados en {doctitle}
+NOTE: Ejemplos basados en {doctitle}
