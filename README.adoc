@@ -1,0 +1,16 @@
+= Spring Boot
+:author: Miguel Villafuerte
+:email: mivimur@hotmail.com
+:revnumber: v1.0
+:revdate: 10 Abril 2017
+:toc: left
+:toclevels: 3
+:sectnums:
+:version-label!:
+:icons: font
+:source-highlighter: pygments
+:pygments-linenums-mode: inline
+:experimental:
+:doctype: book
+
+NOTE: Ejemplos sobre basados en {doctitle}
