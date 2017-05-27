@@ -14,3 +14,81 @@
 :doctype: book
 
 NOTE: Ejemplos basados en {doctitle}
+
+
+== Proyecto básico
+
+[source, bash]
+.Terminal.app
+----
+$ mkdir myproject
+
+$ cd myproject
+
+$ touch build.gradle
+
+$ mkdir -p src/{main,test}/{java,resources} src/main/java/com/mvillafuertem
+
+$ touch src/main/java/com/mvillafuertem/App.java
+----
+
+[source, java]
+.build.gradle
+----
+plugins {
+    id 'org.springframework.boot' version '1.5.3.RELEASE'
+    id 'java'
+}
+
+jar {
+    baseName = 'myproject'
+    version =  '0.0.1-SNAPSHOT'
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter")
+    testCompile("org.springframework.boot:spring-boot-starter-test")
+}
+----
+
+[source, java]
+.App.java
+----
+package com.mvillafuertem;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class App implements CommandLineRunner {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(App.class);
+
+    @Override
+    public void run(String... args) throws Exception {
+        LOGGER.info("Hola Mundo!");
+    }
+
+    public static void main (String[] args) {
+        SpringApplication.run(App.class, args);
+    }
+}
+----
+
+[source, bash]
+.Terminal.app
+----
+$ gradle tasks
+
+$ gradle boRu
+
+YYYY-MM-DD HH:mm:ss  INFO 1049 --- [main] com.mvillafuertem.App : Hola Mundo!
+YYYY-MM-DD HH:mm:ss  INFO 1049 --- [main] com.mvillafuertem.App : Started App in 10.975 seconds (JVM running for 11.303)
+----
