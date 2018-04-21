@@ -1,5 +1,7 @@
-.gradle
+out/
 /build/
+.gradle
+gradlew.bat
 !gradle/wrapper/gradle-wrapper.jar
 
 ### STS ###
